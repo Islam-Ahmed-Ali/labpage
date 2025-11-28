@@ -1,6 +1,6 @@
-/* ===========================
-   GLOBAL STYLE – BLACK & GOLD
-   =========================== */
+/* =========================================
+   GLOBAL — BLACK & GOLD PREMIUM THEME
+   ========================================= */
 
 body {
     margin: 0;
@@ -24,11 +24,13 @@ a:hover {
 
 h1, h2, h3, h4, h5 {
     color: #ffffff;
+    margin-top: 0;
 }
 
-/* ===========================
-         NAVBAR
-   =========================== */
+
+/* =========================================
+   NAVBAR
+   ========================================= */
 
 nav {
     background: #000000;
@@ -64,176 +66,10 @@ nav a:hover {
 }
 
 
-/* ===========================
-        HERO (NO IMAGE)
-   =========================== */
+/* =========================================
+   HERO — NO IMAGE, WITH LAB + KSU LOGOS
+   ========================================= */
 
-.hero {
-    background: linear-gradient(180deg, #000000 0%, #0f0f0f 100%);
-    height: 55vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-bottom: 1px solid #d4af3720;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 10;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    margin: 0;
-    color: #ffffff;
-    text-shadow: 0 0 12px #d4af37aa;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    margin-top: 10px;
-    color: #d4af37;
-}
-
-.hero-btn {
-    display: inline-block;
-    margin-top: 28px;
-    padding: 12px 32px;
-    background: #d4af37;
-    color: #000000;
-    border-radius: 6px;
-    font-weight: bold;
-    box-shadow: 0 0 12px #d4af37;
-    transition: 0.3s;
-}
-
-.hero-btn:hover {
-    background: white;
-    box-shadow: 0 0 20px #ffffffaa;
-}
-
-
-/* ===========================
-          SECTIONS
-   =========================== */
-
-.section {
-    width: min(1100px, 92%);
-    margin: 40px auto;
-    background: #111111;
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 0 12px #000000;
-    border: 1px solid #d4af3720;
-}
-
-.section h2 {
-    border-left: 4px solid #d4af37;
-    padding-left: 12px;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-}
-
-
-/* ===========================
-            GRID CARDS
-   =========================== */
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: #1a1a1a;
-    padding: 28px;
-    border-radius: 12px;
-    border: 1px solid #d4af3720;
-    box-shadow: 0 0 8px #000;
-    transition: 0.3s;
-}
-
-.card h3 {
-    margin-top: 0;
-    color: #d4af37;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #d4af37;
-    box-shadow: 0 0 14px #d4af37aa;
-}
-
-
-/* ===========================
-         TEAM / ABOUT / NEWS
-   =========================== */
-
-.team-grid, .contact-grid, .research-grid, .project-grid, .gallery-grid, .news-list {
-    display: grid;
-    gap: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.member-card, .contact-card, .research-card, .project-card, .gallery-item, .news-item {
-    background: #1a1a1a;
-    padding: 28px;
-    border-radius: 12px;
-    box-shadow: 0 0 12px #000;
-    border: 1px solid #d4af3720;
-    transition: 0.3s;
-}
-
-.member-card:hover,
-.contact-card:hover,
-.research-card:hover,
-.project-card:hover,
-.gallery-item:hover,
-.news-item:hover {
-    transform: translateY(-5px);
-    border-color: #d4af37;
-    box-shadow: 0 0 14px #d4af37aa;
-}
-
-.member-photo {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    margin-bottom: 15px;
-}
-
-
-/* ===========================
-             GALLERY
-   =========================== */
-
-.gallery-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
-}
-
-
-/* ===========================
-             FOOTER
-   =========================== */
-
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #000;
-    color: #d4af37;
-    border-top: 1px solid #d4af3720;
-    margin-top: 50px;
-}
-
-/* HERO LAYOUT WITH LOGOS */
 .hero {
     background: linear-gradient(180deg, #000000 0%, #0f0f0f 100%);
     height: 55vh;
@@ -256,13 +92,42 @@ footer {
     text-align: left;
 }
 
-.hero-sub {
+.hero h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    text-shadow: 0 0 12px #d4af37aa;
+}
+
+.hero p {
+    font-size: 1.2rem;
     margin-top: 10px;
+    color: #d4af37;
+}
+
+.hero-sub {
+    margin-top: 12px;
     color: #cccccc;
     font-size: 0.98rem;
     line-height: 1.6;
 }
 
+.hero-btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 12px 32px;
+    background: #d4af37;
+    color: #000000;
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 0 12px #d4af37;
+    transition: 0.3s;
+}
+.hero-btn:hover {
+    background: white;
+    box-shadow: 0 0 20px #ffffffaa;
+}
+
+/* HERO LOGOS */
 .hero-logos {
     display: flex;
     flex-direction: column;
@@ -275,8 +140,8 @@ footer {
     height: 150px;
     object-fit: contain;
     border-radius: 50%;
-    box-shadow: 0 0 14px #d4af37aa;
     background: #ffffff;
+    box-shadow: 0 0 14px #d4af37aa;
 }
 
 .hero-ksu-logo {
@@ -285,24 +150,171 @@ footer {
     background: #ffffff;
     padding: 8px;
     border-radius: 8px;
-    box-shadow: 0 0 10px #000000;
+    box-shadow: 0 0 12px #000000;
 }
 
-/* Responsive layout */
+/* RESPONSIVE HERO */
 @media (max-width: 768px) {
     .hero {
         height: auto;
         padding: 40px 0;
     }
-
     .hero-inner {
         flex-direction: column;
         text-align: center;
     }
-
     .hero-text {
         max-width: 100%;
         text-align: center;
     }
 }
 
+
+/* =========================================
+   SECTIONS
+   ========================================= */
+
+.section {
+    width: min(1100px, 92%);
+    margin: 40px auto;
+    background: #111111;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 0 12px #000000;
+    border: 1px solid #d4af3720;
+}
+
+.section h2 {
+    border-left: 4px solid #d4af37;
+    padding-left: 12px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+
+/* =========================================
+   GRID CARDS (Home, Research, Projects)
+   ========================================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #d4af3720;
+    box-shadow: 0 0 8px #000;
+    transition: 0.3s;
+}
+
+.card h3 {
+    color: #d4af37;
+    margin-top: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+    box-shadow: 0 0 14px #d4af37aa;
+}
+
+
+/* =========================================
+   TEAM / CONTACT / RESEARCH / PROJECTS
+   ========================================= */
+
+.team-grid,
+.contact-grid,
+.research-grid,
+.project-grid,
+.gallery-grid,
+.news-list {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.member-card,
+.contact-card,
+.research-card,
+.project-card,
+.gallery-item,
+.news-item {
+    background: #1a1a1a;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #d4af3720;
+    box-shadow: 0 0 12px #000;
+    transition: 0.3s;
+}
+
+.member-card:hover,
+.contact-card:hover,
+.research-card:hover,
+.project-card:hover,
+.gallery-item:hover,
+.news-item:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+    box-shadow: 0 0 14px #d4af37aa;
+}
+
+
+/* TEAM PHOTOS */
+.member-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   GALLERY
+   ========================================= */
+
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   NEWS LIST
+   ========================================= */
+
+.news-item h3 {
+    color: #d4af37;
+    margin-bottom: 6px;
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #000;
+    color: #d4af37;
+    border-top: 1px solid #d4af3720;
+    margin-top: 50px;
+    font-size: 0.95rem;
+}
