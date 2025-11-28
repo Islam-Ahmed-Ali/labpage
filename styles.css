@@ -321,3 +321,15 @@ footer {
     margin-top: 50px;
     font-size: 0.95rem;
 }
+
+
+/* PUBLICATIONS LIST */
+.pub-list {
+    padding-left: 20px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.pub-list li {
+    margin-bottom: 16px;
+}
