@@ -232,3 +232,77 @@ footer {
     border-top: 1px solid #d4af3720;
     margin-top: 50px;
 }
+
+/* HERO LAYOUT WITH LOGOS */
+.hero {
+    background: linear-gradient(180deg, #000000 0%, #0f0f0f 100%);
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d4af3720;
+}
+
+.hero-inner {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 60%;
+    text-align: left;
+}
+
+.hero-sub {
+    margin-top: 10px;
+    color: #cccccc;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.hero-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.hero-lab-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 14px #d4af37aa;
+    background: #ffffff;
+}
+
+.hero-ksu-logo {
+    width: 150px;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000000;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
