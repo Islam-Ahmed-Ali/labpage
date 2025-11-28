@@ -9,116 +9,113 @@
 
 <body>
 
-<!-- HEADER -->
-<header class="subpage-header">
-    <h1>Projects</h1>
-    <p>Innovative Energy Systems & Intelligent Control for Electrified Mobility</p>
-</header>
+<!-- NAVBAR -->
+<nav>
+    <div class="logo-area">
+        <img src="Pics/Lab_Logo.jpeg" alt="iENERGY Lab Logo">
+        <h2 class="gold">iENERGY Lab</h2>
+    </div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="team.html">Team</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
 
-<!-- INTRO -->
+<!-- PAGE HEADER -->
 <section class="section">
-    <h2>Overview</h2>
+    <h2>Current Projects</h2>
     <p>
-        The iENERGY Lab develops advanced algorithms, prototype systems, and real-time control strategies 
-        at the intersection of artificial intelligence, power electronics, energy storage, and electric vehicle systems. 
-        Below are some of our flagship projects that demonstrate our commitment to impactful and practical research.
+        The iENERGY Lab leads multiple ongoing research projects combining AI, power electronics,
+        energy storage, and real-time embedded systems to build the next generation of electrified mobility technologies.
     </p>
 </section>
 
 <!-- PROJECT GRID -->
 <section class="section">
-    <h2>Flagship Projects</h2>
+    <div class="grid">
 
-    <div class="project-grid">
-
-        <!-- MO-MIX -->
-        <div class="project-card">
-            <h3>🧠 MO-MIX Multi-Agent Reinforcement Learning EMS</h3>
-            <p>
-                A multi-objective, multi-agent reinforcement learning (MARL) framework for real-time 
-                energy management in EV hybrid storage systems (battery + supercapacitor). 
-                The MO-MIX architecture learns dynamic power allocation under highly variable driving conditions.
-            </p>
-            <ul>
-                <li>Continuous and discrete RL action spaces</li>
-                <li>Hypernetworks for objective mixing</li>
-                <li>MATLAB/Simulink + real-time code generation</li>
-                <li>Supports UDDS, US06, WLTP driving cycles</li>
-            </ul>
-        </div>
-
-        <!-- KalmanNet SOC/SOH -->
-        <div class="project-card">
-            <h3>🤖 KalmanNet-Based SOC/SOH Estimation</h3>
-            <p>
-                A physics-informed deep neural architecture for SOC and SOH estimation of lithium-ion batteries 
-                and supercapacitors. Combines Kalman filtering structure with deep learning adaptivity.
-            </p>
-            <ul>
-                <li>Battery SOC estimation</li>
-                <li>Supercapacitor SOC estimation</li>
-                <li>PIL validation with TI C2000</li>
-                <li>Journal publications in Elsevier & IEEE</li>
-            </ul>
-        </div>
-
-        <!-- Real-Time -->
-        <div class="project-card">
-            <h3>🧪 Real-Time Energy Management Implementation</h3>
-            <p>
-                Real-time execution of EMS controllers on embedded hardware with PIL/HIL environments. 
-                Ensures algorithm robustness, safety, and performance in realistic driving conditions.
-            </p>
-            <ul>
-                <li>Speedgoat HIL integration</li>
-                <li>Processor-in-the-loop testing</li>
-                <li>TI C2000 F28379D deployment</li>
-                <li>NXP i.MX RT & STM32 platforms</li>
-            </ul>
-        </div>
-
-        <!-- HESS -->
+        <!-- PROJECT 1 -->
         <div class="project-card">
             <h3>⚡ Hybrid Energy Storage System Development</h3>
             <p>
-                Hardware and simulation development of EV hybrid energy storage systems consisting of 
-                a lithium-ion battery, supercapacitor pack, and solar PV module for auxiliary charging.
+                Design and implementation of a battery–supercapacitor–solar hybrid architecture optimized for EV energy flow.
             </p>
             <ul>
-                <li>High-fidelity HESS modeling</li>
-                <li>DC/DC converter development</li>
-                <li>Thermal, aging, and dynamic modeling</li>
-                <li>Solar PV integration</li>
+                <li>Battery–SC sizing optimization</li>
+                <li>Real-time power split architecture</li>
+                <li>State prediction & control frameworks</li>
             </ul>
         </div>
 
-        <!-- Solar -->
+        <!-- PROJECT 2 -->
         <div class="project-card">
-            <h3>🌞 Solar-Integrated EV Powertrain Modeling</h3>
+            <h3>🤖 Multi-Agent RL Energy Management (MO-MIX)</h3>
             <p>
-                Integration of photovoltaic systems into electric vehicles to enhance range and reduce grid dependence. 
-                Includes MPPT control, shading modeling, and safety diagnostics.
+                A multi-objective, multi-agent reinforcement learning framework enabling intelligent EMS in electric vehicles.
             </p>
             <ul>
-                <li>MPPT algorithm implementation</li>
-                <li>Partial shading detection</li>
-                <li>PV power estimation under dynamics</li>
-                <li>PV + HESS co-optimization</li>
+                <li>Continuous-action RL controllers</li>
+                <li>Hypernetworks for objective mixing</li>
+                <li>Real-world driving cycle simulation</li>
             </ul>
         </div>
 
-        <!-- Battery Aging -->
+        <!-- PROJECT 3 -->
         <div class="project-card">
-            <h3>🔋 Battery Degradation & Health Modeling</h3>
+            <h3>🧠 KalmanNet SOC/SOH Estimation</h3>
             <p>
-                Data-driven and physics-based modeling of battery degradation for improved lifetime estimation 
-                and predictive maintenance in EVs.
+                Neural Kalman filtering for reliable SOC/SOH estimation in batteries and supercapacitors under dynamic loads.
             </p>
             <ul>
-                <li>SOH estimation frameworks</li>
-                <li>Aging behavior under high C-rate</li>
-                <li>Thermal coupling and heat generation</li>
-                <li>Dataset generation for AI models</li>
+                <li>PIL deployment on TI C2000</li>
+                <li>Nonlinear EV cycle estimation</li>
+                <li>GAN noise augmentation & robustness</li>
+            </ul>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+            <h3>📡 Wireless Power Transfer for EVs</h3>
+            <p>
+                High-efficiency WPT systems for stationary and dynamic charging of electric vehicles.
+            </p>
+            <ul>
+                <li>WPT coil & compensation network design</li>
+                <li>Electromagnetic modeling & coupling optimization</li>
+                <li>Converter control for high-frequency WPT</li>
+            </ul>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+            <h3>🧪 Real-Time HIL & Embedded Systems</h3>
+            <p>
+                Real-time validation of controllers using Speedgoat, TI C2000, and hardware-in-the-loop frameworks.
+            </p>
+            <ul>
+                <li>Real-time EMS validation</li>
+                <li>Processor-in-the-loop simulations</li>
+                <li>High-speed control prototyping</li>
+            </ul>
+        </div>
+
+        <!-- PROJECT 6 -->
+        <div class="project-card">
+            <h3>☀️ Solar PV Modeling & Diagnostics</h3>
+            <p>
+                Modeling and intelligent diagnostics of partially shaded photovoltaic systems.
+            </p>
+            <ul>
+                <li>Computational-vision PV diagnostics</li>
+                <li>Fault detection & MPPT optimization</li>
+                <li>Real-time PV estimator deployment</li>
             </ul>
         </div>
 
@@ -127,7 +124,7 @@
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2025 iENERGY Lab — Intelligent Energy Systems & Electrified Mobility Laboratory</p>
+    © 2025 iENERGY Lab – Intelligent Energy Systems & Electrified Mobility Laboratory, Kennesaw State University
 </footer>
 
 </body>
