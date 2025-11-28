@@ -3,123 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Areas | iENERGY Lab</title>
+    <title>Research | iENERGY Lab</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="subpage-header">
-    <h1>Research Areas</h1>
-    <p>Advancing Intelligent Energy Systems for Electrified Mobility</p>
-</header>
+<!-- NAVBAR -->
+<nav>
+    <div class="logo-area">
+        <img src="Pics/Lab_Logo.jpeg" alt="iENERGY Lab Logo">
+        <h2 class="gold">iENERGY Lab</h2>
+    </div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="team.html">Team</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
 
+<!-- PAGE HEADER -->
 <section class="section">
-    <h2>Overview</h2>
+    <h2>Research Areas</h2>
     <p>
-        The iENERGY Lab conducts research at the intersection of artificial intelligence, 
-        power electronics, electrochemical energy storage, real-time embedded systems, 
-        and advanced control. Our research aims to develop intelligent, efficient, and 
-        robust energy solutions for next-generation electric vehicles (EVs), distributed 
-        energy systems, and sustainable transportation infrastructures.
+        The iENERGY Lab conducts advanced research in energy management systems, hybrid storage technologies,
+        wireless power transfer, and intelligent control for next-generation electric vehicles and renewable
+        energy platforms. Our work integrates power electronics, AI, embedded systems, and real-time simulation.
     </p>
 </section>
 
 <!-- RESEARCH GRID -->
 <section class="section">
-    <h2>Our Core Research Domains</h2>
 
-    <div class="research-grid">
+    <div class="grid">
 
-        <!-- HESS -->
-        <div class="research-card">
+        <!-- Hybrid Energy Storage -->
+        <div class="card">
             <h3>⚡ Hybrid Energy Storage Systems (HESS)</h3>
             <p>
-                Integration of lithium-ion batteries, supercapacitors, and solar photovoltaic modules 
-                for improved power distribution, extended life, and enhanced efficiency in electric vehicles.
+                Development of advanced battery–supercapacitor–solar hybrid architecture for electric vehicles.
+                Research focuses on optimal sizing, real-time power split, state estimation, and high-efficiency operation.
             </p>
-            <ul>
-                <li>Battery–Supercapacitor coupling</li>
-                <li>DC/DC converter design & modeling</li>
-                <li>PV-assisted EV charging</li>
-                <li>Optimal power sharing strategies</li>
-            </ul>
         </div>
 
-        <!-- EMS -->
-        <div class="research-card">
-            <h3>🧠 Energy Management Systems (EMS)</h3>
+        <!-- AI-Based EMS -->
+        <div class="card">
+            <h3>🤖 AI & Reinforcement Learning EMS</h3>
             <p>
-                Multi-objective and multi-agent control strategies for optimizing EV powertrain operation, 
-                balancing energy efficiency, performance, thermal safety, and battery aging considerations.
+                Multi-agent reinforcement learning (MARL) algorithms for intelligent energy management.
+                Includes continuous control actors, multi-objective reward shaping (MO-MIX), and real-time deployment.
             </p>
-            <ul>
-                <li>Rule-based & optimization-based EMS</li>
-                <li>Model Predictive Control (MPC)</li>
-                <li>Multi-agent RL (MO-MIX, MADDPG)</li>
-                <li>Continuous and discrete control frameworks</li>
-            </ul>
         </div>
 
         <!-- KalmanNet -->
-        <div class="research-card">
-            <h3>🤖 AI-Based State Estimation (KalmanNet)</h3>
+        <div class="card">
+            <h3>🧠 KalmanNet-Based SOC/SOH Estimation</h3>
             <p>
-                Hybrid physics-informed deep learning architectures for real-time SOC/SOH estimation of 
-                batteries and supercapacitors under highly dynamic EV operating conditions.
+                Physics-informed neural networks (KalmanNet) for battery and supercapacitor SOC/SOH estimation.
+                Work includes PIL/HIL validation, nonlinear identification, and low-cost deployable estimators.
             </p>
-            <ul>
-                <li>KalmanNet for SOC estimation</li>
-                <li>KalmanNet for SOH prediction</li>
-                <li>Hybrid EKF/AI estimation strategies</li>
-                <li>Processor-in-the-loop real-time testing</li>
-            </ul>
         </div>
 
-        <!-- Real Time -->
-        <div class="research-card">
-            <h3>🧪 Real-Time Simulation & Embedded Control</h3>
+        <!-- Wireless Power Transfer -->
+        <div class="card">
+            <h3>📡 Wireless Power Transfer (WPT)</h3>
             <p>
-                Deployment of advanced EMS algorithms on embedded systems using processor-in-the-loop 
-                (PIL) and hardware-in-the-loop (HIL) platforms.
+                High-efficiency WPT systems for static and dynamic EV charging. Research includes coil optimization,
+                compensation networks, electromagnetic modeling, and high-frequency converter control.
             </p>
-            <ul>
-                <li>Speedgoat HIL testing</li>
-                <li>TI C2000 real-time controllers</li>
-                <li>STM32 & NXP platforms</li>
-                <li>Embedded optimization and code generation</li>
-            </ul>
         </div>
 
-        <!-- Battery -->
-        <div class="research-card">
-            <h3>🔋 Battery & Supercapacitor Modeling</h3>
+        <!-- Real-Time Embedded Systems -->
+        <div class="card">
+            <h3>🧪 Real-Time Embedded Control & HIL</h3>
             <p>
-                Electrochemical and data-driven models for predicting dynamic behavior, performance degradation, 
-                and lifecycle characteristics of energy storage devices.
+                Hardware-in-the-loop (HIL) and processor-in-the-loop (PIL) validation using Speedgoat and TI C2000.
+                Development of real-time EMS controllers, observers, and RL agents for EVs.
             </p>
-            <ul>
-                <li>Equivalent circuit models (ECM)</li>
-                <li>Electrochemical and aging models</li>
-                <li>Thermal coupling and degradation</li>
-                <li>High-speed parameter identification</li>
-            </ul>
         </div>
 
-        <!-- Solar -->
-        <div class="research-card">
-            <h3>🌞 Solar-Integrated EV Energy Systems</h3>
+        <!-- Solar & MPPT -->
+        <div class="card">
+            <h3>☀️ Solar PV Modeling & Diagnostics</h3>
             <p>
-                Integration of photovoltaic systems into EV architectures for improved autonomy, charging efficiency, 
-                and renewable power utilization.
+                Modeling of shaded PV systems, partial shading detection, intelligent MPPT, solar diagnostics,
+                and fault detection algorithms including computational vision–based approaches.
             </p>
-            <ul>
-                <li>Solar-assisted EV charging</li>
-                <li>PV maximum power point tracking (MPPT)</li>
-                <li>Modeling & optimization under partial shading</li>
-                <li>PV faults, protection, and diagnosis</li>
-            </ul>
         </div>
 
     </div>
@@ -127,7 +102,7 @@
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2025 iENERGY Lab — Intelligent Energy Systems & Electrified Mobility Laboratory</p>
+    © 2025 iENERGY Lab – Intelligent Energy Systems & Electrified Mobility Laboratory, Kennesaw State University
 </footer>
 
 </body>
