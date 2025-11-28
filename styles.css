@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
-    background: #0a0a0a;
+    background: #000000;
     color: #e8e8e8;
 }
 
@@ -67,19 +67,17 @@ nav a:hover {
 
 
 /* =========================================
-   HERO — NO IMAGE, WITH LAB + KSU LOGOS
+   HERO — MATCHES YOUR SCREENSHOT
    ========================================= */
 
 .hero {
-    background: linear-gradient(180deg, #000000 0%, #0f0f0f 100%);
-    height: 55vh;
-    display: flex;
-    align-items: center;
+    background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+    padding: 80px 0;
     border-bottom: 1px solid #d4af3720;
 }
 
 .hero-inner {
-    width: min(1100px, 92%);
+    width: min(1300px, 92%);
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -87,85 +85,90 @@ nav a:hover {
     gap: 40px;
 }
 
+/* LEFT SIDE TEXT */
 .hero-text {
-    max-width: 60%;
-    text-align: left;
+    max-width: 55%;
 }
 
-.hero h1 {
-    font-size: 4rem;
+.hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
     color: #ffffff;
-    text-shadow: 0 0 12px #d4af37aa;
+    margin-bottom: 25px;
+    text-shadow: 0 0 25px rgba(255,255,255,0.2);
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-top: 10px;
+.hero-subtitle {
+    font-size: 1.4rem;
     color: #d4af37;
+    margin-bottom: 20px;
 }
 
-.hero-sub {
-    margin-top: 12px;
-    color: #cccccc;
-    font-size: 0.98rem;
+.hero-description {
+    font-size: 1.2rem;
+    color: #d4af37cc;
     line-height: 1.6;
+    margin-bottom: 30px;
 }
 
+/* BUTTON */
 .hero-btn {
     display: inline-block;
-    margin-top: 28px;
-    padding: 12px 32px;
     background: #d4af37;
-    color: #000000;
-    border-radius: 6px;
+    padding: 14px 35px;
+    border-radius: 12px;
     font-weight: bold;
-    box-shadow: 0 0 12px #d4af37;
+    color: black;
+    font-size: 1.12rem;
+    box-shadow: 0 0 18px #d4af37aa;
     transition: 0.3s;
 }
 .hero-btn:hover {
-    background: white;
-    box-shadow: 0 0 20px #ffffffaa;
+    background: #ffffff;
+    box-shadow: 0 0 30px #ffffffaa;
 }
 
-/* HERO LOGOS */
+
+/* RIGHT SIDE LOGOS (STACKED) */
 .hero-logos {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 35px;
 }
 
+/* Lab Logo */
 .hero-lab-logo {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     object-fit: contain;
     border-radius: 50%;
+    padding: 12px;
     background: #ffffff;
-    box-shadow: 0 0 14px #d4af37aa;
+    box-shadow: 0 0 40px #d4af37bb;
 }
 
+/* KSU Logo */
 .hero-ksu-logo {
-    width: 150px;
+    width: 200px;
     object-fit: contain;
     background: #ffffff;
-    padding: 8px;
-    border-radius: 8px;
-    box-shadow: 0 0 12px #000000;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 0 30px #000000bb;
 }
 
+
 /* RESPONSIVE HERO */
-@media (max-width: 768px) {
-    .hero {
-        height: auto;
-        padding: 40px 0;
-    }
+@media (max-width: 900px) {
     .hero-inner {
         flex-direction: column;
         text-align: center;
+        gap: 60px;
     }
+
     .hero-text {
         max-width: 100%;
-        text-align: center;
     }
 }
 
@@ -219,7 +222,7 @@ nav a:hover {
 .card:hover {
     transform: translateY(-5px);
     border-color: #d4af37;
-    box-shadow: 0 0 14px #d4af37aa;
+    box-shadow: 0 0 18px #d4af37aa;
 }
 
 
@@ -260,7 +263,7 @@ nav a:hover {
 .news-item:hover {
     transform: translateY(-5px);
     border-color: #d4af37;
-    box-shadow: 0 0 14px #d4af37aa;
+    box-shadow: 0 0 18px #d4af37aa;
 }
 
 
@@ -276,7 +279,7 @@ nav a:hover {
 
 
 /* =========================================
-   GALLERY
+   GALLERY ITEMS
    ========================================= */
 
 .gallery-item img {
@@ -289,7 +292,7 @@ nav a:hover {
 
 
 /* =========================================
-   NEWS LIST
+   NEWS ITEMS
    ========================================= */
 
 .news-item h3 {
