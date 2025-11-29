@@ -1,12 +1,9 @@
 /* =========================================
-   GLOBAL THEME
-========================================= */
-
-html, body {
+   GLOBAL — BLACK & GOLD PREMIUM THEME
+   ========================================= */
+body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    overflow-x: hidden;
     font-family: "Helvetica Neue", Arial, sans-serif;
     background: #000;
     color: #e8e8e8;
@@ -16,265 +13,303 @@ a {
     color: #d4af37;
     text-decoration: none;
 }
-a:hover {
-    text-decoration: underline;
-}
+a:hover { text-decoration: underline; }
 
 h1, h2, h3, h4, h5 {
     color: #fff;
     margin-top: 0;
 }
 
+/* Prevent horizontal scroll */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
 /* =========================================
    NAVBAR
-========================================= */
-
+   ========================================= */
 .navbar {
     width: 100%;
     background: #000;
-    border-bottom: 1px solid #d4af3720;
+    border-bottom: 1px solid #d4af3750;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .nav-container {
-    max-width: 1400px;
+    max-width: 1300px;
+    width: 100%;
     margin: auto;
-    padding: 12px 22px;
+    padding: 12px 20px;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
-/* LEFT SIDE */
+/* LEFT SIDE — LOGO + TITLE */
 .nav-left {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-/* LOGO (NORMAL SHAPE — NOT CIRCULAR) */
 .nav-logo {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    border-radius: 8px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* TITLE */
 .nav-title {
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
 }
 
-/* DESKTOP LINKS */
+/* NAV LINKS */
 .nav-links {
     display: flex;
-    align-items: center;
     gap: 28px;
+    align-items: center;
 }
 
 /* HAMBURGER */
 .hamburger {
     display: none;
     flex-direction: column;
+    gap: 6px;
     cursor: pointer;
-    gap: 5px;
 }
+
 .hamburger span {
     width: 28px;
     height: 3px;
     background: #d4af37;
+    transition: 0.3s;
 }
 
 #menu-toggle { display: none; }
 
-/* =========================================
-   MOBILE NAV
-========================================= */
-
-@media(max-width: 900px) {
-
+/* RESPONSIVE NAV */
+@media (max-width: 900px) {
     .hamburger { display: flex; }
 
     .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #000;
-        width: 100%;
-        padding: 15px 0;
-        text-align: center;
-        border-top: 1px solid #d4af3720;
-
         position: absolute;
         top: 70px;
-        left: 0;
-        z-index: 999;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        background: #000;
+        border-top: 1px solid #d4af3720;
+        padding: 20px 0;
+        display: none;
     }
 
-    #menu-toggle:checked ~ .nav-links {
-        display: flex;
-    }
+    #menu-toggle:checked ~ .nav-links { display: flex; }
 
     .nav-links a {
         padding: 12px 0;
-        font-size: 1.15rem;
-        border-bottom: 1px solid #d4af3710;
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #d4af3715;
     }
 
-    /* Hamburger Animations */
+    .nav-links a:last-child { border-bottom: none; }
+
     #menu-toggle:checked + .hamburger span:nth-child(1) {
-        transform: rotate(45deg) translateY(8px);
+        transform: rotate(45deg) translateY(7px);
     }
     #menu-toggle:checked + .hamburger span:nth-child(2) {
         opacity: 0;
     }
     #menu-toggle:checked + .hamburger span:nth-child(3) {
-        transform: rotate(-45deg) translateY(-8px);
+        transform: rotate(-45deg) translateY(-7px);
     }
 }
 
+
 /* =========================================
    HERO SECTION
-========================================= */
-
+   ========================================= */
 .hero {
-    padding: 80px 0;
-    background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+    padding: 90px 0;
+    background: linear-gradient(180deg, #000, #0a0a0a);
 }
 
 .hero-inner {
     max-width: 1300px;
-    width: 90%;
+    width: 92%;
     margin: auto;
 
     display: flex;
-    flex-direction: column;
-    gap: 22px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 55%;
 }
 
 .hero-text h1 {
-    font-size: 4rem;
+    font-size: 4.2rem;
     font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 30px rgba(255,255,255,0.3);
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
     color: #d4af37;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
     color: #d4af37cc;
-    margin-top: 10px;
+    font-size: 1.15rem;
+    line-height: 1.6;
 }
 
+/* Button */
 .hero-btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 14px 34px;
     background: #d4af37;
+    color: #000;
+    padding: 14px 30px;
     border-radius: 12px;
     font-weight: bold;
-    color: #000;
+    margin-top: 20px;
     box-shadow: 0 0 18px #d4af37aa;
-    transition: 0.25s;
+    transition: 0.3s;
 }
 .hero-btn:hover {
-    background: white;
+    background: #fff;
     box-shadow: 0 0 25px #ffffffaa;
 }
 
-/* =========================================
-   SECTIONS + GRID
-========================================= */
+/* RIGHT LOGOS REMOVED — CLEAN */
 
+
+/* MOBILE HERO */
+@media (max-width: 900px) {
+    .hero-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text { max-width: 100%; }
+}
+
+
+/* =========================================
+   UNIVERSAL SECTION WRAPPER
+   ========================================= */
 .section {
-    width: 90%;
     max-width: 1100px;
-    margin: 40px auto;
+    width: 92%;
+    margin: 50px auto;
     background: #111;
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 14px;
     border: 1px solid #d4af3720;
+    box-shadow: 0 0 12px #000;
 }
 
 .section h2 {
     border-left: 4px solid #d4af37;
-    padding-left: 10px;
-    margin-bottom: 30px;
+    padding-left: 12px;
     font-size: 1.8rem;
+    margin-bottom: 25px;
 }
 
-/* UNIVERSAL GRID */
-.items-grid {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
 
 /* =========================================
-   UNIVERSAL CARD CONTAINER (team, news, projects, research)
-========================================= */
-
-.item-card {
-    background: #1a1a1a;
-    padding: 30px;
-    border-radius: 14px;
-    border: 1px solid #d4af3720;
-    box-shadow: 0 0 10px #000;
-    transition: 0.25s ease;
-    text-align: center;
-}
-
-.item-card:hover {
-    transform: translateY(-5px);
-    border-color: #d4af37;
-    box-shadow: 0 0 20px #d4af3760;
-}
-
-/* =========================================
-   CIRCULAR PHOTOS (ONLY FOR PHOTOS)
-========================================= */
-
-.item-card img,
-.team-photo,
-.gallery-item img,
-.project-card img,
-.research-card img,
-.photo-circle {
-    width: 160px;
-    height: 160px;
+   UNIVERSAL CIRCLE IMAGES
+   ========================================= */
+.circle-photo {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    display: block;
+    border: 3px solid #d4af37;
     margin: 0 auto 15px auto;
+    box-shadow: 0 0 12px rgba(212,175,55,0.4);
 }
 
-@media(max-width: 600px) {
-    .item-card img,
-    .team-photo,
-    .gallery-item img,
-    .project-card img,
-    .research-card img,
-    .photo-circle {
-        width: 120px;
-        height: 120px;
-    }
+.gallery-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #d4af37;
+    margin: auto;
+    display: block;
+    box-shadow: 0 0 18px rgba(212,175,55,0.25);
 }
+
+
+/* =========================================
+   GRID LAYOUTS
+   ========================================= */
+.grid,
+.team-grid,
+.project-grid,
+.news-list,
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+.card,
+.member-card,
+.project-card,
+.news-item,
+.gallery-item {
+    background: #111;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid #d4af3720;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+}
+
+.card:hover,
+.member-card:hover,
+.project-card:hover,
+.news-item:hover,
+.gallery-item:hover {
+    transform: translateY(-6px);
+    border-color: #d4af37;
+    box-shadow: 0 0 25px rgba(212,175,55,0.5);
+}
+
+.member-card h3,
+.project-card h3,
+.news-item h3 {
+    color: #d4af37;
+    margin-bottom: 8px;
+}
+
 
 /* =========================================
    FOOTER
-========================================= */
-
+   ========================================= */
 footer {
     text-align: center;
     padding: 25px;
-    color: #d4af37;
     background: #000;
+    color: #d4af37;
     border-top: 1px solid #d4af3720;
-    margin-top: 50px;
+    margin-top: 40px;
 }
