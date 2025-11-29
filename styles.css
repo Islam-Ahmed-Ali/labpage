@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5 {
    ============================= */
 .nav-links {
     display: flex;
-    gap: 22px;
+    gap: 15px;
 }
 
 .nav-links a {
@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5 {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 5px;
+    gap: 15px;
 }
 
 .hamburger span {
