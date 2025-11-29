@@ -241,3 +241,9 @@ footer {
     border-top: 1px solid #d4af3720;
     margin-top: 50px;
 }
+
+img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
