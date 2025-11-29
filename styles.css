@@ -3,16 +3,16 @@
    ========================================= */
 
 * {
-    box-sizing: border-box; /* 🔥 Fix overflow everywhere */
+    box-sizing: border-box; /* Prevent layout overflow */
 }
 
 html, body {
     margin: 0;
     padding: 0;
     max-width: 100%;
-    overflow-x: hidden; /* 🔥 Remove horizontal scroll */
+    overflow-x: hidden;
     font-family: "Helvetica Neue", Arial, sans-serif;
-    background: #000000;
+    background: #000;
     color: #e8e8e8;
 }
 
@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =========================================
-   NAVBAR
+   NAVBAR — FIXED VERSION
    ========================================= */
 
 .navbar {
@@ -44,25 +44,26 @@ h1, h2, h3, h4, h5 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    overflow: hidden; /* 🔥 ENSURES NOTHING CAN OVERFLOW NAVBAR */
 }
 
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
-    max-width: 100%; /* 🔥 Prevents wider-than-screen container */
     padding: 12px 20px;
+    gap: 40px; /* perfect spacing between logo block and menu */
     box-sizing: border-box;
+
+    /* 🔥 MAIN FIX: no left-right stretching */
+    justify-content: flex-start;
 }
 
-/* LEFT SIDE */
+/* Left side: logo + title */
 .nav-left {
     display: flex;
     align-items: center;
     gap: 12px;
-    flex-shrink: 0; /* KEEP LOGO FROM SHRINKING */
+    flex-shrink: 0; /* prevents shrinking */
 }
 
 .nav-logo {
@@ -77,62 +78,64 @@ h1, h2, h3, h4, h5 {
     white-space: nowrap;
 }
 
-/* DESKTOP MENU */
+/* Desktop menu */
 .nav-links {
     display: flex;
-    gap: 22px;
+    gap: 25px;
     align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;              /* 🔥 ALLOWS WRAPPING */
-    max-width: calc(100% - 200px); /* 🔥 PREVENTS pushing beyond screen */
-    overflow: hidden;              /* 🔥 GUARANTEES NO OVERFLOW */
+
+    /* 🔥 essential: align right without overflow */
+    margin-left: auto;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    max-width: 100%;
 }
 
 .nav-links a {
-    white-space: nowrap; /* prevent breaking words */
     font-weight: 600;
     color: #d4af37;
 }
 
-/* HAMBURGER BUTTON */
+/* Hamburger */
 .hamburger {
     display: none;
     flex-direction: column;
-    gap: 6px;
     cursor: pointer;
-    margin-left: 10px;
+    gap: 6px; /* cleaned */
 }
 
 .hamburger span {
     width: 28px;
     height: 3px;
     background: #d4af37;
+    transition: 0.3s;
 }
 
-/* HIDE CHECKBOX */
-#menu-toggle { display: none; }
+#menu-toggle {
+    display: none;
+}
 
 /* =========================================
    MOBILE NAVBAR
    ========================================= */
+
 @media (max-width: 900px) {
 
     .hamburger {
         display: flex;
     }
 
-    /* HIDE DESKTOP MENU */
+    /* hide desktop links */
     .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
-        max-width: 100%;
-        padding: 20px 0;
+        padding: 18px 0;
         background: #000;
-        border-top: 1px solid #d4af3750;
+        border-top: 1px solid #d4af3725;
+        margin-left: 0; /* RESET */
     }
 
-    /* SHOW MENU WHEN TOGGLED */
     #menu-toggle:checked ~ .nav-links {
         display: flex;
     }
@@ -142,16 +145,31 @@ h1, h2, h3, h4, h5 {
         text-align: center;
         padding: 14px 0;
         border-bottom: 1px solid #d4af3720;
+        font-size: 1.1rem;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    /* hamburger animation */
+    #menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translateY(7px);
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-7px);
     }
 }
-
 
 /* =========================================
    HERO SECTION
    ========================================= */
 
 .hero {
-    background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
     padding: 80px 0;
     border-bottom: 1px solid #d4af3720;
 }
@@ -164,17 +182,17 @@ h1, h2, h3, h4, h5 {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    overflow-x: hidden; /* 🔥 Prevent overflow */
+    overflow-x: hidden;
 }
 
-/* LEFT TEXT */
 .hero-text {
     max-width: 55%;
 }
 
 .hero-text h1 {
-    font-size: 4.2rem; /* 🔥 slightly reduced for safety */
+    font-size: 4.2rem;
     font-weight: 900;
+    color: #fff;
     margin-bottom: 25px;
     text-shadow: 0 0 25px rgba(255,255,255,0.2);
 }
@@ -192,14 +210,13 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 30px;
 }
 
-/* BUTTON */
 .hero-btn {
     display: inline-block;
     background: #d4af37;
     padding: 14px 35px;
     border-radius: 12px;
-    font-weight: bold;
     color: black;
+    font-weight: bold;
     font-size: 1.12rem;
     box-shadow: 0 0 18px #d4af37aa;
     transition: 0.3s;
@@ -209,41 +226,41 @@ h1, h2, h3, h4, h5 {
     box-shadow: 0 0 30px #ffffffaa;
 }
 
-/* RIGHT LOGOS */
+/* Right logos */
 .hero-logos {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 35px;
-    max-width: 100%; /* 🔥 fixes overflow */
+    max-width: 100%;
     overflow: hidden;
 }
 
 .hero-lab-logo {
-    width: 160px; /* 🔥 fixed size */
+    width: 160px;
     height: 160px;
     object-fit: contain;
     background: #fff;
-    border-radius: 50%;
     padding: 10px;
+    border-radius: 50%;
     box-shadow: 0 0 40px #d4af37bb;
 }
 
 .hero-ksu-logo {
     width: 190px;
     object-fit: contain;
-    background: #ffffff;
+    background: #fff;
     padding: 12px;
     border-radius: 12px;
     box-shadow: 0 0 30px #000000bb;
 }
 
-/* MOBILE HERO */
+/* Mobile hero */
 @media (max-width: 900px) {
     .hero-inner {
         flex-direction: column;
-        text-align: center;
         gap: 50px;
+        text-align: center;
     }
     .hero-text {
         max-width: 100%;
@@ -251,14 +268,14 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =========================================
-   SECTIONS
+   SECTION BASE
    ========================================= */
 
 .section {
     width: 100%;
     max-width: 1100px;
     margin: 40px auto;
-    background: #111111;
+    background: #111;
     border-radius: 12px;
     padding: 40px;
     border: 1px solid #d4af3720;
@@ -267,8 +284,8 @@ h1, h2, h3, h4, h5 {
 .section h2 {
     border-left: 4px solid #d4af37;
     padding-left: 12px;
-    margin-bottom: 25px;
     font-size: 1.8rem;
+    margin-bottom: 25px;
 }
 
 /* =========================================
@@ -281,17 +298,12 @@ h1, h2, h3, h4, h5 {
     gap: 25px;
 }
 
-/* Cards */
 .card {
     background: #1a1a1a;
     padding: 28px;
     border-radius: 12px;
     border: 1px solid #d4af3720;
     transition: 0.3s;
-}
-
-.card h3 {
-    color: #d4af37;
 }
 
 .card:hover {
@@ -301,7 +313,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =========================================
-   TEAM / CONTACT / PROJECT / NEWS
+   TEAM / CONTACT / PROJECTS
    ========================================= */
 
 .team-grid,
@@ -330,7 +342,6 @@ h1, h2, h3, h4, h5 {
 
 .member-card:hover,
 .contact-card:hover,
-.research-card:hover,
 .project-card:hover,
 .gallery-item:hover,
 .news-item:hover {
@@ -338,7 +349,6 @@ h1, h2, h3, h4, h5 {
     border-color: #d4af37;
 }
 
-/* Member Photos */
 .member-photo {
     width: 120px;
     height: 120px;
@@ -347,7 +357,10 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 15px;
 }
 
-/* Gallery Images */
+/* =========================================
+   GALLERY
+   ========================================= */
+
 .gallery-item img {
     width: 100%;
     height: 180px;
@@ -356,14 +369,17 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 12px;
 }
 
-/* News */
+/* =========================================
+   NEWS
+   ========================================= */
+
 .news-item h3 {
     color: #d4af37;
 }
 
 .news-date {
     font-size: 0.9rem;
-    color: #cccccc;
+    color: #ccc;
     margin-bottom: 12px;
     font-style: italic;
 }
@@ -387,6 +403,7 @@ footer {
     padding-left: 20px;
     line-height: 1.7;
 }
+
 .pub-list li {
     margin-bottom: 16px;
 }
