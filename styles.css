@@ -3,7 +3,7 @@
    ========================================= */
 
 * {
-    box-sizing: border-box; /* Prevent layout overflow */
+    box-sizing: border-box;
 }
 
 html, body {
@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =========================================
-   NAVBAR — FIXED VERSION
+   NAVBAR — FIXED RESPONSIVE VERSION
    ========================================= */
 
 .navbar {
@@ -51,19 +51,16 @@ h1, h2, h3, h4, h5 {
     align-items: center;
     width: 100%;
     padding: 12px 20px;
-    gap: 40px; /* perfect spacing between logo block and menu */
-    box-sizing: border-box;
-
-    /* 🔥 MAIN FIX: no left-right stretching */
+    gap: 40px;
     justify-content: flex-start;
 }
 
-/* Left side: logo + title */
+/* Logo + title */
 .nav-left {
     display: flex;
     align-items: center;
     gap: 12px;
-    flex-shrink: 0; /* prevents shrinking */
+    flex-shrink: 0;
 }
 
 .nav-logo {
@@ -83,17 +80,10 @@ h1, h2, h3, h4, h5 {
     display: flex;
     gap: 25px;
     align-items: center;
-
-    /* 🔥 essential: align right without overflow */
     margin-left: auto;
     flex-wrap: wrap;
     white-space: nowrap;
     max-width: 100%;
-}
-
-.nav-links a {
-    font-weight: 600;
-    color: #d4af37;
 }
 
 /* Hamburger */
@@ -101,7 +91,7 @@ h1, h2, h3, h4, h5 {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 6px; /* cleaned */
+    gap: 6px;
 }
 
 .hamburger span {
@@ -125,7 +115,6 @@ h1, h2, h3, h4, h5 {
         display: flex;
     }
 
-    /* hide desktop links */
     .nav-links {
         display: none;
         flex-direction: column;
@@ -133,7 +122,7 @@ h1, h2, h3, h4, h5 {
         padding: 18px 0;
         background: #000;
         border-top: 1px solid #d4af3725;
-        margin-left: 0; /* RESET */
+        margin-left: 0;
     }
 
     #menu-toggle:checked ~ .nav-links {
@@ -226,36 +215,30 @@ h1, h2, h3, h4, h5 {
     box-shadow: 0 0 30px #ffffffaa;
 }
 
-/* Right logos */
+/* =========================================
+   RIGHT SIDE LOGOS — SMALL + SIDE-BY-SIDE
+   ========================================= */
+
 .hero-logos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
     align-items: center;
-    gap: 35px;
+    justify-content: center;
     max-width: 100%;
-    overflow: hidden;
 }
 
-.hero-lab-logo {
-    width: 160px;
-    height: 160px;
-    object-fit: contain;
+.hero-logo-small {
+    width: 120px;
+    height: 120px;
     background: #fff;
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 0 40px #d4af37bb;
-}
-
-.hero-ksu-logo {
-    width: 190px;
+    padding: 8px;
     object-fit: contain;
-    background: #fff;
-    padding: 12px;
     border-radius: 12px;
-    box-shadow: 0 0 30px #000000bb;
+    box-shadow: 0 0 20px #d4af3711;
 }
 
-/* Mobile hero */
+/* Mobile hero behavior */
 @media (max-width: 900px) {
     .hero-inner {
         flex-direction: column;
@@ -289,7 +272,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =========================================
-   GRID CARDS
+   GRID CARDS (research, projects, etc.)
    ========================================= */
 
 .grid {
@@ -313,7 +296,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =========================================
-   TEAM / CONTACT / PROJECTS
+   TEAM / CONTACT / PROJECTS / NEWS
    ========================================= */
 
 .team-grid,
@@ -342,6 +325,7 @@ h1, h2, h3, h4, h5 {
 
 .member-card:hover,
 .contact-card:hover,
+.research-card:hover,
 .project-card:hover,
 .gallery-item:hover,
 .news-item:hover {
@@ -403,7 +387,6 @@ footer {
     padding-left: 20px;
     line-height: 1.7;
 }
-
 .pub-list li {
     margin-bottom: 16px;
 }
