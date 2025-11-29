@@ -65,6 +65,83 @@ nav a:hover {
     color: white;
 }
 
+/* ================================
+   MOBILE NAVBAR FIX
+   ================================ */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 25px;
+    background: #000;
+    border-bottom: 1px solid #d4af3755;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Hide the checkbox */
+.nav-toggle {
+    display: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: #d4af37;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Desktop links */
+.nav-links {
+    display: flex;
+    gap: 12px;
+}
+
+/* MOBILE RESPONSIVE */
+/* --------------------- */
+@media (max-width: 850px) {
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide links initially */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        right: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        padding: 18px 0;
+        border-top: 1px solid #d4af3720;
+        border-bottom: 1px solid #d4af3720;
+    }
+
+    /* Show menu when hamburger clicked */
+    .nav-toggle:checked + .hamburger + .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 14px 0;
+        text-align: center;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #d4af3720;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+}
+
+
 
 /* =========================================
    HERO — MATCHES YOUR SCREENSHOT
