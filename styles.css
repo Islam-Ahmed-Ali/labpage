@@ -2,9 +2,15 @@
    GLOBAL — BLACK & GOLD PREMIUM THEME
    ========================================= */
 
-body {
+* {
+    box-sizing: border-box; /* 🔥 Fix overflow everywhere */
+}
+
+html, body {
     margin: 0;
     padding: 0;
+    max-width: 100%;
+    overflow-x: hidden; /* 🔥 Remove horizontal scroll */
     font-family: "Helvetica Neue", Arial, sans-serif;
     background: #000000;
     color: #e8e8e8;
@@ -27,14 +33,10 @@ h1, h2, h3, h4, h5 {
     margin-top: 0;
 }
 
-
 /* =========================================
    NAVBAR
    ========================================= */
 
-/* =============================
-   MAIN NAVBAR CONTAINER
-   ============================= */
 .navbar {
     width: 100%;
     background: #000;
@@ -46,7 +48,7 @@ h1, h2, h3, h4, h5 {
 
 .nav-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px; /* 🔥 Increased to prevent crowding */
     margin: auto;
     display: flex;
     align-items: center;
@@ -54,13 +56,11 @@ h1, h2, h3, h4, h5 {
     padding: 12px 18px;
 }
 
-/* =============================
-   LEFT SIDE (LOGO + TITLE)
-   ============================= */
+/* LEFT SIDE */
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .nav-logo {
@@ -74,27 +74,21 @@ h1, h2, h3, h4, h5 {
     font-weight: 700;
 }
 
-/* =============================
-   NAV LINKS - DESKTOP
-   ============================= */
+/* DESKTOP MENU */
 .nav-links {
     display: flex;
     gap: 25px;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    max-width: 100%;
 }
 
-
-/* =============================
-   HAMBURGER MENU 
-   ============================= */
+/* HAMBURGER */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 15px;
+    gap: 6px; /* 🔥 FIXED (was 15px causing overflow) */
 }
 
 .hamburger span {
@@ -108,35 +102,34 @@ h1, h2, h3, h4, h5 {
     display: none;
 }
 
-/* =============================
-   MOBILE RESPONSIVE
-   ============================= */
+/* =========================================
+   MOBILE NAVBAR
+   ========================================= */
 @media (max-width: 900px) {
 
-    /* Show hamburger */
     .hamburger {
         display: flex;
     }
 
-    /* Hide links initially */
     .nav-links {
         position: absolute;
         top: 65px;
         left: 0;
         width: 100%;
-        display: none;
-        flex-direction: column;
         background: #000;
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Hidden by default */
         padding: 18px 0;
         border-top: 1px solid #d4af3725;
     }
 
-    /* Show menu when toggled */
     #menu-toggle:checked ~ .nav-links {
         display: flex;
     }
 
     .nav-links a {
+        width: 100%;
         text-align: center;
         padding: 15px 0;
         border-bottom: 1px solid #d4af3715;
@@ -147,7 +140,7 @@ h1, h2, h3, h4, h5 {
         border-bottom: none;
     }
 
-    /* Hamburger Animation (turns into X) */
+    /* Hamburger Animation */
     #menu-toggle:checked + .hamburger span:nth-child(1) {
         transform: rotate(45deg) translateY(8px);
     }
@@ -160,8 +153,8 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =========================================
-   HERO — MATCHES YOUR SCREENSHOT
- ========================================= */
+   HERO SECTION
+   ========================================= */
 
 .hero {
     background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
@@ -170,23 +163,24 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-inner {
-    width: min(1300px, 92%);
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+    overflow-x: hidden; /* 🔥 Prevent overflow */
 }
 
-/* LEFT SIDE TEXT */
+/* LEFT TEXT */
 .hero-text {
     max-width: 55%;
 }
 
 .hero-text h1 {
-    font-size: 4.5rem;
+    font-size: 4.2rem; /* 🔥 slightly reduced for safety */
     font-weight: 900;
-    color: #ffffff;
     margin-bottom: 25px;
     text-shadow: 0 0 25px rgba(255,255,255,0.2);
 }
@@ -221,63 +215,58 @@ h1, h2, h3, h4, h5 {
     box-shadow: 0 0 30px #ffffffaa;
 }
 
-
-/* RIGHT SIDE LOGOS (STACKED) */
+/* RIGHT LOGOS */
 .hero-logos {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 35px;
+    max-width: 100%; /* 🔥 fixes overflow */
+    overflow: hidden;
 }
 
-/* Lab Logo */
 .hero-lab-logo {
-    width: 170px;
-    height: 170px;
+    width: 160px; /* 🔥 fixed size */
+    height: 160px;
     object-fit: contain;
+    background: #fff;
     border-radius: 50%;
-    padding: 12px;
-    background: #ffffff;
+    padding: 10px;
     box-shadow: 0 0 40px #d4af37bb;
 }
 
-/* KSU Logo */
 .hero-ksu-logo {
-    width: 200px;
+    width: 190px;
     object-fit: contain;
     background: #ffffff;
     padding: 12px;
-    border-radius: 14px;
+    border-radius: 12px;
     box-shadow: 0 0 30px #000000bb;
 }
 
-
-/* RESPONSIVE HERO */
+/* MOBILE HERO */
 @media (max-width: 900px) {
     .hero-inner {
         flex-direction: column;
         text-align: center;
-        gap: 60px;
+        gap: 50px;
     }
-
     .hero-text {
         max-width: 100%;
     }
 }
-
-
 
 /* =========================================
    SECTIONS
    ========================================= */
 
 .section {
-    width: min(1100px, 92%);
+    width: 100%;
+    max-width: 1100px;
     margin: 40px auto;
     background: #111111;
     border-radius: 12px;
     padding: 40px;
-    box-shadow: 0 0 12px #000000;
     border: 1px solid #d4af3720;
 }
 
@@ -288,9 +277,8 @@ h1, h2, h3, h4, h5 {
     font-size: 1.8rem;
 }
 
-
 /* =========================================
-   GRID CARDS (Home, Research, Projects)
+   GRID CARDS
    ========================================= */
 
 .grid {
@@ -299,18 +287,17 @@ h1, h2, h3, h4, h5 {
     gap: 25px;
 }
 
+/* Cards */
 .card {
     background: #1a1a1a;
     padding: 28px;
     border-radius: 12px;
     border: 1px solid #d4af3720;
-    box-shadow: 0 0 8px #000;
     transition: 0.3s;
 }
 
 .card h3 {
     color: #d4af37;
-    margin-top: 0;
 }
 
 .card:hover {
@@ -319,9 +306,8 @@ h1, h2, h3, h4, h5 {
     box-shadow: 0 0 18px #d4af37aa;
 }
 
-
 /* =========================================
-   TEAM / CONTACT / RESEARCH / PROJECTS
+   TEAM / CONTACT / PROJECT / NEWS
    ========================================= */
 
 .team-grid,
@@ -345,7 +331,6 @@ h1, h2, h3, h4, h5 {
     padding: 28px;
     border-radius: 12px;
     border: 1px solid #d4af3720;
-    box-shadow: 0 0 12px #000;
     transition: 0.3s;
 }
 
@@ -357,25 +342,18 @@ h1, h2, h3, h4, h5 {
 .news-item:hover {
     transform: translateY(-5px);
     border-color: #d4af37;
-    box-shadow: 0 0 18px #d4af37aa;
 }
 
-
-/* TEAM PHOTOS */
+/* Member Photos */
 .member-photo {
     width: 120px;
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    display: block;
     margin-bottom: 15px;
 }
 
-
-/* =========================================
-   GALLERY ITEMS
-   ========================================= */
-
+/* Gallery Images */
 .gallery-item img {
     width: 100%;
     height: 180px;
@@ -384,14 +362,9 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 12px;
 }
 
-
-/* =========================================
-   NEWS ITEMS
-   ========================================= */
-
+/* News */
 .news-item h3 {
     color: #d4af37;
-    margin-bottom: 6px;
 }
 
 .news-date {
@@ -400,7 +373,6 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 12px;
     font-style: italic;
 }
-
 
 /* =========================================
    FOOTER
@@ -416,20 +388,11 @@ footer {
     font-size: 0.95rem;
 }
 
-
-/* PUBLICATIONS LIST */
+/* Publications */
 .pub-list {
     padding-left: 20px;
     line-height: 1.7;
-    margin: 0;
 }
-
 .pub-list li {
     margin-bottom: 16px;
 }
-
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
