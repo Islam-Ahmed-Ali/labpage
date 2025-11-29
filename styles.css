@@ -32,24 +32,31 @@ h1, h2, h3, h4, h5 {
    NAVBAR
    ========================================= */
 
-/* ===========================
-   NAVBAR (Desktop + Mobile)
-   =========================== */
-
+/* =============================
+   MAIN NAVBAR CONTAINER
+   ============================= */
 .navbar {
     width: 100%;
     background: #000;
-    border-bottom: 1px solid #d4af3755;
-    padding: 12px 22px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-bottom: 1px solid #d4af3750;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* Left Section (Logo + Title) */
+.nav-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+}
+
+/* =============================
+   LEFT SIDE (LOGO + TITLE)
+   ============================= */
 .nav-left {
     display: flex;
     align-items: center;
@@ -57,17 +64,19 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-logo {
-    height: 42px;
+    height: 45px;
+    width: 45px;
     border-radius: 50%;
 }
 
 .nav-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
 }
 
-/* Nav Links (Desktop) */
+/* =============================
+   NAV LINKS - DESKTOP
+   ============================= */
 .nav-links {
     display: flex;
     gap: 22px;
@@ -83,68 +92,67 @@ h1, h2, h3, h4, h5 {
     color: #fff;
 }
 
-/* Hide the real checkbox */
-#menu-toggle {
-    display: none;
-}
-
-/* Hamburger icon (3 lines) */
+/* =============================
+   HAMBURGER MENU 
+   ============================= */
 .hamburger {
     display: none;
     flex-direction: column;
-    gap: 5px;
     cursor: pointer;
+    gap: 5px;
 }
 
 .hamburger span {
     width: 28px;
     height: 3px;
     background: #d4af37;
-    display: block;
     transition: 0.3s;
 }
 
-/* ===========================
-   MOBILE MODE
-   =========================== */
+#menu-toggle {
+    display: none;
+}
 
-@media (max-width: 850px) {
+/* =============================
+   MOBILE RESPONSIVE
+   ============================= */
+@media (max-width: 900px) {
 
     /* Show hamburger */
     .hamburger {
         display: flex;
     }
 
-    /* Hide desktop links */
+    /* Hide links initially */
     .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #000;
-        padding: 18px 0;
         position: absolute;
         top: 65px;
         left: 0;
-        border-top: 1px solid #d4af3720;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        background: #000;
+        padding: 18px 0;
+        border-top: 1px solid #d4af3725;
     }
 
-    /* Show menu when checkbox checked */
+    /* Show menu when toggled */
     #menu-toggle:checked ~ .nav-links {
         display: flex;
     }
 
-    /* Desktop links go vertical */
     .nav-links a {
-        padding: 14px 0;
         text-align: center;
-        border-bottom: 1px solid #d4af3720;
+        padding: 15px 0;
+        border-bottom: 1px solid #d4af3715;
+        font-size: 1.1rem;
     }
 
     .nav-links a:last-child {
         border-bottom: none;
     }
 
-    /* Hamburger Animations (turns to X) */
+    /* Hamburger Animation (turns into X) */
     #menu-toggle:checked + .hamburger span:nth-child(1) {
         transform: rotate(45deg) translateY(8px);
     }
@@ -156,113 +164,6 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-
-
-/* =========================================
-   HERO — MATCHES YOUR SCREENSHOT
-   ========================================= */
-
-.hero {
-    background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
-    padding: 80px 0;
-    border-bottom: 1px solid #d4af3720;
-}
-
-.hero-inner {
-    width: min(1300px, 92%);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-/* LEFT SIDE TEXT */
-.hero-text {
-    max-width: 55%;
-}
-
-.hero-text h1 {
-    font-size: 4.5rem;
-    font-weight: 900;
-    color: #ffffff;
-    margin-bottom: 25px;
-    text-shadow: 0 0 25px rgba(255,255,255,0.2);
-}
-
-.hero-subtitle {
-    font-size: 1.4rem;
-    color: #d4af37;
-    margin-bottom: 20px;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    color: #d4af37cc;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-/* BUTTON */
-.hero-btn {
-    display: inline-block;
-    background: #d4af37;
-    padding: 14px 35px;
-    border-radius: 12px;
-    font-weight: bold;
-    color: black;
-    font-size: 1.12rem;
-    box-shadow: 0 0 18px #d4af37aa;
-    transition: 0.3s;
-}
-.hero-btn:hover {
-    background: #ffffff;
-    box-shadow: 0 0 30px #ffffffaa;
-}
-
-
-/* RIGHT SIDE LOGOS (STACKED) */
-.hero-logos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
-}
-
-/* Lab Logo */
-.hero-lab-logo {
-    width: 170px;
-    height: 170px;
-    object-fit: contain;
-    border-radius: 50%;
-    padding: 12px;
-    background: #ffffff;
-    box-shadow: 0 0 40px #d4af37bb;
-}
-
-/* KSU Logo */
-.hero-ksu-logo {
-    width: 200px;
-    object-fit: contain;
-    background: #ffffff;
-    padding: 12px;
-    border-radius: 14px;
-    box-shadow: 0 0 30px #000000bb;
-}
-
-
-/* RESPONSIVE HERO */
-@media (max-width: 900px) {
-    .hero-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 60px;
-    }
-
-    .hero-text {
-        max-width: 100%;
-    }
-}
 
 
 /* =========================================
