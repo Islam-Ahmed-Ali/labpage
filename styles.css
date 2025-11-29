@@ -79,18 +79,13 @@ h1, h2, h3, h4, h5 {
    ============================= */
 .nav-links {
     display: flex;
-    gap: 15px;
+    gap: 25px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 
-.nav-links a {
-    color: #d4af37;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.nav-links a:hover {
-    color: #fff;
-}
 
 /* =============================
    HAMBURGER MENU 
