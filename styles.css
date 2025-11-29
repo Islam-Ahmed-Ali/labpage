@@ -41,42 +41,42 @@ h1, h2, h3, h4, h5 {
 .nav-container {
     max-width: 1400px;
     margin: auto;
-    padding: 10px 20px;
+    padding: 12px 22px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Left: Logo + Title */
+/* LEFT SIDE */
 .nav-left {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-/* LOGO (NOT CIRCULAR) */
+/* LOGO (NORMAL SHAPE — NOT CIRCULAR) */
 .nav-logo {
     width: 48px;
     height: 48px;
     object-fit: contain;
-    border-radius: 8px; /* small rounding */
+    border-radius: 8px;
 }
 
-/* Title */
+/* TITLE */
 .nav-title {
     font-size: 1.6rem;
     font-weight: 700;
 }
 
-/* Desktop nav links */
+/* DESKTOP LINKS */
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 28px;
 }
 
-/* Hamburger */
+/* HAMBURGER */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -89,18 +89,15 @@ h1, h2, h3, h4, h5 {
     background: #d4af37;
 }
 
-#menu-toggle {
-    display: none;
-}
+#menu-toggle { display: none; }
 
 /* =========================================
    MOBILE NAV
 ========================================= */
+
 @media(max-width: 900px) {
 
-    .hamburger {
-        display: flex;
-    }
+    .hamburger { display: flex; }
 
     .nav-links {
         display: none;
@@ -108,13 +105,13 @@ h1, h2, h3, h4, h5 {
         background: #000;
         width: 100%;
         padding: 15px 0;
+        text-align: center;
+        border-top: 1px solid #d4af3720;
+
         position: absolute;
         top: 70px;
         left: 0;
         z-index: 999;
-
-        border-top: 1px solid #d4af3720;
-        text-align: center;
     }
 
     #menu-toggle:checked ~ .nav-links {
@@ -123,11 +120,11 @@ h1, h2, h3, h4, h5 {
 
     .nav-links a {
         padding: 12px 0;
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         border-bottom: 1px solid #d4af3710;
     }
 
-    /* Hamburger animation */
+    /* Hamburger Animations */
     #menu-toggle:checked + .hamburger span:nth-child(1) {
         transform: rotate(45deg) translateY(8px);
     }
@@ -150,11 +147,12 @@ h1, h2, h3, h4, h5 {
 
 .hero-inner {
     max-width: 1300px;
-    margin: auto;
     width: 90%;
+    margin: auto;
+
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
 }
 
 .hero-text h1 {
@@ -163,15 +161,15 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-subtitle {
-    color: #d4af37;
     font-size: 1.4rem;
+    color: #d4af37;
 }
 
 .hero-description {
-    color: #d4af37cc;
-    margin: 15px 0;
     font-size: 1.2rem;
     line-height: 1.6;
+    color: #d4af37cc;
+    margin-top: 10px;
 }
 
 .hero-btn {
@@ -183,6 +181,11 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
     color: #000;
     box-shadow: 0 0 18px #d4af37aa;
+    transition: 0.25s;
+}
+.hero-btn:hover {
+    background: white;
+    box-shadow: 0 0 25px #ffffffaa;
 }
 
 /* =========================================
@@ -201,41 +204,50 @@ h1, h2, h3, h4, h5 {
 
 .section h2 {
     border-left: 4px solid #d4af37;
-    padding-left: 12px;
-    margin-bottom: 25px;
+    padding-left: 10px;
+    margin-bottom: 30px;
     font-size: 1.8rem;
 }
 
-.grid {
+/* UNIVERSAL GRID */
+.items-grid {
     display: grid;
-    gap: 25px;
+    gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-.card {
+/* =========================================
+   UNIVERSAL CARD CONTAINER (team, news, projects, research)
+========================================= */
+
+.item-card {
     background: #1a1a1a;
-    padding: 25px;
-    border-radius: 12px;
+    padding: 30px;
+    border-radius: 14px;
     border: 1px solid #d4af3720;
-    transition: 0.3s;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s ease;
+    text-align: center;
 }
 
-.card:hover {
-    transform: translateY(-4px);
+.item-card:hover {
+    transform: translateY(-5px);
     border-color: #d4af37;
+    box-shadow: 0 0 20px #d4af3760;
 }
 
 /* =========================================
-   REAL PHOTO CIRCLES (TEAM, GALLERY, PROJECTS)
+   CIRCULAR PHOTOS (ONLY FOR PHOTOS)
 ========================================= */
 
-.photo-circle,
+.item-card img,
 .team-photo,
 .gallery-item img,
 .project-card img,
-.research-card img {
-    width: 180px;
-    height: 180px;
+.research-card img,
+.photo-circle {
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
@@ -243,13 +255,14 @@ h1, h2, h3, h4, h5 {
 }
 
 @media(max-width: 600px) {
-.photo-circle,
-.team-photo,
-.gallery-item img,
-.project-card img,
-.research-card img {
-        width: 130px;
-        height: 130px;
+    .item-card img,
+    .team-photo,
+    .gallery-item img,
+    .project-card img,
+    .research-card img,
+    .photo-circle {
+        width: 120px;
+        height: 120px;
     }
 }
 
