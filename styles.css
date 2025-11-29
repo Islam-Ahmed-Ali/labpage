@@ -43,17 +43,18 @@ h1, h2, h3, h4, h5 {
     border-bottom: 1px solid #d4af3750;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    overflow: hidden; /* 🔥 ENSURES NOTHING CAN OVERFLOW NAVBAR */
 }
 
 .nav-container {
-    width: 100%;
-    max-width: 1400px; /* 🔥 Increased to prevent crowding */
-    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 18px;
+    width: 100%;
+    max-width: 100%; /* 🔥 Prevents wider-than-screen container */
+    padding: 12px 20px;
+    box-sizing: border-box;
 }
 
 /* LEFT SIDE */
@@ -61,6 +62,7 @@ h1, h2, h3, h4, h5 {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0; /* KEEP LOGO FROM SHRINKING */
 }
 
 .nav-logo {
@@ -72,35 +74,43 @@ h1, h2, h3, h4, h5 {
 .nav-title {
     font-size: 1.5rem;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 /* DESKTOP MENU */
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 22px;
     align-items: center;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-wrap: wrap;              /* 🔥 ALLOWS WRAPPING */
+    max-width: calc(100% - 200px); /* 🔥 PREVENTS pushing beyond screen */
+    overflow: hidden;              /* 🔥 GUARANTEES NO OVERFLOW */
 }
 
-/* HAMBURGER */
+.nav-links a {
+    white-space: nowrap; /* prevent breaking words */
+    font-weight: 600;
+    color: #d4af37;
+}
+
+/* HAMBURGER BUTTON */
 .hamburger {
     display: none;
     flex-direction: column;
+    gap: 6px;
     cursor: pointer;
-    gap: 6px; /* 🔥 FIXED (was 15px causing overflow) */
+    margin-left: 10px;
 }
 
 .hamburger span {
     width: 28px;
     height: 3px;
     background: #d4af37;
-    transition: 0.3s;
 }
 
-#menu-toggle {
-    display: none;
-}
+/* HIDE CHECKBOX */
+#menu-toggle { display: none; }
 
 /* =========================================
    MOBILE NAVBAR
@@ -111,19 +121,18 @@ h1, h2, h3, h4, h5 {
         display: flex;
     }
 
+    /* HIDE DESKTOP MENU */
     .nav-links {
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: #000;
+        display: none;
         flex-direction: column;
-        align-items: center;
-        display: none; /* Hidden by default */
-        padding: 18px 0;
-        border-top: 1px solid #d4af3725;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 0;
+        background: #000;
+        border-top: 1px solid #d4af3750;
     }
 
+    /* SHOW MENU WHEN TOGGLED */
     #menu-toggle:checked ~ .nav-links {
         display: flex;
     }
@@ -131,26 +140,11 @@ h1, h2, h3, h4, h5 {
     .nav-links a {
         width: 100%;
         text-align: center;
-        padding: 15px 0;
-        border-bottom: 1px solid #d4af3715;
-        font-size: 1.1rem;
-    }
-
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-
-    /* Hamburger Animation */
-    #menu-toggle:checked + .hamburger span:nth-child(1) {
-        transform: rotate(45deg) translateY(8px);
-    }
-    #menu-toggle:checked + .hamburger span:nth-child(2) {
-        opacity: 0;
-    }
-    #menu-toggle:checked + .hamburger span:nth-child(3) {
-        transform: rotate(-45deg) translateY(-8px);
+        padding: 14px 0;
+        border-bottom: 1px solid #d4af3720;
     }
 }
+
 
 /* =========================================
    HERO SECTION
