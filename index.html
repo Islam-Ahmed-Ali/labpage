@@ -3,116 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iENERGY Lab – Intelligent Energy Systems & Electrified Mobility Laboratory</title>
+    <title>iENERGY Lab – Intelligent Energy Systems & Electrified Mobility</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =========================================
-     NAVBAR
-========================================= -->
-<nav class="navbar">
-    <div class="nav-container">
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+    <header class="navbar">
+        <div class="nav-container">
 
-        <!-- LEFT SIDE: LOGO + TITLE -->
-        <div class="nav-left">
-            <img src="Pics/Lab_Logo.jpeg" class="nav-logo" alt="Lab Logo">
-            <div class="nav-title">iENERGY Lab</div>
-        </div>
-
-        <!-- MOBILE TOGGLE CHECKBOX -->
-        <input type="checkbox" id="menu-toggle">
-
-        <!-- HAMBURGER ICON -->
-        <label for="menu-toggle" class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-
-        <!-- NAVIGATION LINKS -->
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="research.html">Research</a>
-            <a href="projects.html">Projects</a>
-            <a href="publications.html">Publications</a>
-            <a href="team.html">Team</a>
-            <a href="news.html">News</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-    </div>
-</nav>
-
-
-
-<!-- =========================================
-     HERO SECTION (logos removed)
-========================================= -->
-<section class="hero">
-    <div class="hero-inner">
-
-        <!-- LEFT TEXT ONLY -->
-        <div class="hero-text">
-            <h1>iENERGY Lab</h1>
-
-            <div class="hero-subtitle">
-                Intelligent Energy Systems & Electrified Mobility Laboratory
+            <!-- Left: Logo + Title -->
+            <div class="nav-left">
+                <img src="Pics/Lab_Logo.jpeg" class="nav-logo" alt="Lab Logo">
+                <span class="nav-title">iENERGY Lab</span>
             </div>
 
-            <div class="hero-description">
-                AI-driven energy management, hybrid storage systems, and real-time control  
-                for next-generation electric vehicles at Kennesaw State University.
+            <!-- Mobile Toggle -->
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Nav Links -->
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="research.html">Research</a>
+                <a href="projects.html">Projects</a>
+                <a href="publications.html">Publications</a>
+                <a href="team.html">Team</a>
+                <a href="news.html">News</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================================
+         HERO SECTION
+    ================================= -->
+    <section class="hero">
+        <div class="hero-inner">
+
+            <!-- Left: Text -->
+            <div class="hero-text">
+                <h1><span class="gold">iENERGY</span> Lab</h1>
+
+                <p class="hero-subtitle">
+                    Intelligent Energy Systems & Electrified Mobility Laboratory
+                </p>
+
+                <p class="hero-description">
+                    AI-driven energy management, hybrid storage systems, and real-time control
+                    for next-generation electric vehicles at Kennesaw State University.
+                </p>
+
+                <a href="research.html" class="hero-btn">Explore Research</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================
+         LOGOS BELOW HERO
+    ================================= -->
+    <section class="logo-section">
+        <div class="logo-container">
+            <img src="Pics/Lab_Logo.jpeg" class="circle-logo" alt="Lab Logo">
+            <img src="Pics/MB_Vert_3Clr.png" class="circle-logo" alt="KSU Logo">
+        </div>
+    </section>
+
+    <!-- ================================
+         FEATURED SECTIONS
+    ================================= -->
+    <section class="section">
+        <h2>Our Focus</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Energy Management</h3>
+                <p>Next-generation hybrid battery–supercapacitor energy management.</p>
             </div>
 
-            <a href="research.html" class="hero-btn">Explore Research</a>
+            <div class="card">
+                <h3>State Estimation</h3>
+                <p>Advanced SOC/SOH estimation using KalmanNet and physics-based models.</p>
+            </div>
+
+            <div class="card">
+                <h3>Reinforcement Learning</h3>
+                <p>Multi-agent RL controllers for real-time EV power optimization.</p>
+            </div>
+
+            <div class="card">
+                <h3>Hardware Validation</h3>
+                <p>TI C2000, Speedgoat HIL, PIL testing for real-time control.</p>
+            </div>
         </div>
+    </section>
 
-    </div>
-</section>
-
-
-
-<!-- =========================================
-     SECTION: Research Focus Cards
-========================================= -->
-<section class="section">
-    <h2>Our Research Focus</h2>
-
-    <div class="grid">
-        <div class="card">
-            <h3>Energy Management Systems</h3>
-            <p>AI-driven optimal power allocation for hybrid energy storage in EVs.</p>
-        </div>
-
-        <div class="card">
-            <h3>Hybrid Storage Systems</h3>
-            <p>Advanced battery–supercapacitor modeling, control, and estimation.</p>
-        </div>
-
-        <div class="card">
-            <h3>Real-Time Validation</h3>
-            <p>PIL/HIL testing using TI C2000 processors and Speedgoat platforms.</p>
-        </div>
-
-        <div class="card">
-            <h3>Machine Learning</h3>
-            <p>Deep learning for SOC/SOH estimation and multi-agent reinforcement learning EMS.</p>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-<footer>
-    © 2025 iENERGY Lab — Kennesaw State University
-</footer>
+    <!-- ================================
+         FOOTER
+    ================================= -->
+    <footer>
+        © 2025 iENERGY Lab — Kennesaw State University
+    </footer>
 
 </body>
 </html>
