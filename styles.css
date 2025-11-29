@@ -164,6 +164,112 @@ h1, h2, h3, h4, h5 {
     }
 }
 
+/* =========================================
+   HERO — MATCHES YOUR SCREENSHOT
+ ========================================= */
+
+.hero {
+    background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+    padding: 80px 0;
+    border-bottom: 1px solid #d4af3720;
+}
+
+.hero-inner {
+    width: min(1300px, 92%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* LEFT SIDE TEXT */
+.hero-text {
+    max-width: 55%;
+}
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-shadow: 0 0 25px rgba(255,255,255,0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #d4af37cc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+.hero-btn {
+    display: inline-block;
+    background: #d4af37;
+    padding: 14px 35px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: black;
+    font-size: 1.12rem;
+    box-shadow: 0 0 18px #d4af37aa;
+    transition: 0.3s;
+}
+.hero-btn:hover {
+    background: #ffffff;
+    box-shadow: 0 0 30px #ffffffaa;
+}
+
+
+/* RIGHT SIDE LOGOS (STACKED) */
+.hero-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+/* Lab Logo */
+.hero-lab-logo {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 12px;
+    background: #ffffff;
+    box-shadow: 0 0 40px #d4af37bb;
+}
+
+/* KSU Logo */
+.hero-ksu-logo {
+    width: 200px;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 0 30px #000000bb;
+}
+
+
+/* RESPONSIVE HERO */
+@media (max-width: 900px) {
+    .hero-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+}
+
 
 
 /* =========================================
