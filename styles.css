@@ -1,28 +1,38 @@
 /* =========================================
-   GLOBAL — BLACK & GOLD THEME
-   ========================================= */
+   GLOBAL — BLACK & GOLD PREMIUM THEME
+========================================= */
 
 html, body {
     margin: 0;
     padding: 0;
     max-width: 100%;
-    overflow-x: hidden; /* Fix mobile wide issue */
-    background: #000;
-    color: #e8e8e8;
+    overflow-x: hidden;
+    background: #000000;
     font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #e8e8e8;
 }
 
 a {
     color: #d4af37;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
 
+.gold {
+    color: #d4af37;
+}
+
+h1, h2, h3, h4 {
+    margin-top: 0;
+    color: white;
+}
+
 /* =========================================
    NAVBAR
-   ========================================= */
+========================================= */
 
 .navbar {
     width: 100%;
@@ -37,10 +47,10 @@ a:hover {
     max-width: 1200px;
     width: 100%;
     margin: auto;
+    padding: 12px 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 18px;
 }
 
 .nav-left {
@@ -50,28 +60,29 @@ a:hover {
 }
 
 .nav-logo {
-    height: 45px;
     width: 45px;
-    object-fit: cover;
+    height: 45px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .nav-title {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: bold;
 }
 
+/* Desktop nav links */
 .nav-links {
     display: flex;
     gap: 25px;
-    align-items: center;
 }
 
+/* Hamburger menu */
 .hamburger {
     display: none;
     flex-direction: column;
-    cursor: pointer;
     gap: 6px;
+    cursor: pointer;
 }
 
 .hamburger span {
@@ -84,199 +95,290 @@ a:hover {
     display: none;
 }
 
-/* ========= MOBILE NAVIGATION FIX ========= */
-
+/* =============================
+   MOBILE NAV
+============================= */
 @media (max-width: 900px) {
 
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
+        display: none;
+        flex-direction: column;
         position: absolute;
         top: 65px;
         left: 0;
         width: 100%;
-        padding: 20px 0;
-        background: black;
-        display: none;
-        flex-direction: column;
+        background: #000;
         border-top: 1px solid #d4af3720;
+        padding: 20px 0;
+        text-align: center;
     }
 
     #menu-toggle:checked ~ .nav-links {
         display: flex;
     }
 
-    .hamburger {
-        display: flex;
-    }
-
     .nav-links a {
         padding: 15px 0;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #d4af3712;
+        border-bottom: 1px solid #d4af3720;
     }
 }
 
 /* =========================================
    HERO SECTION
-   ========================================= */
+========================================= */
 
 .hero {
+    background: radial-gradient(circle at center, #000000 0%, #0a0a0a 100%);
     padding: 80px 0;
-    background: radial-gradient(circle at center, #000 0%, #050505 100%);
 }
 
 .hero-inner {
-    width: min(1200px, 92%);
+    max-width: 1200px;
     margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hero-text {
-    max-width: 55%;
+    text-align: left;
 }
 
 .hero-text h1 {
     font-size: 4rem;
     font-weight: 900;
-    color: #fff;
+    color: white;
 }
 
-.hero-subtitle,
-.hero-description {
+.hero-subtitle {
     color: #d4af37;
+    font-size: 1.3rem;
+    margin-top: 10px;
 }
 
-/* Mobile hero fix */
-@media (max-width: 900px) {
-    .hero-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .hero-text {
-        max-width: 100%;
-    }
-
-    .hero-text h1 {
-        font-size: 3rem;
-    }
+.hero-description {
+    color: #d4af37cc;
+    margin: 20px 0;
+    max-width: 600px;
 }
 
-/* BUTTON */
 .hero-btn {
+    display: inline-block;
     background: #d4af37;
     padding: 14px 35px;
-    border-radius: 12px;
+    border-radius: 10px;
     color: black;
-    font-weight: bold;
-    display: inline-block;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-
-/* =========================================
-   UNIVERSAL RESPONSIVE CIRCULAR IMAGES
-   ========================================= */
-
-.circle-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #d4af37;
-    margin: 0 auto 15px auto;
-    display: block;
-    box-shadow: 0 0 18px rgba(212,175,55,0.4);
+.hero-btn:hover {
+    background: white;
+    color: black;
 }
 
-.director-photo {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #d4af37;
-    margin: 0 auto 20px auto;
-    display: block;
-    box-shadow: 0 0 22px rgba(212,175,55,0.35);
-}
-
-/* Fix for mobile screens */
+/* Hero mobile */
 @media (max-width: 600px) {
-    .director-photo {
-        width: 180px;
-        height: 180px;
+    .hero-text h1 {
+        font-size: 2.6rem;
+    }
+    .hero-description {
+        font-size: 1rem;
     }
 }
 
-/* Gallery circles */
-.gallery-circle {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #d4af37;
-    margin: auto;
-    display: block;
+/* =========================================
+   SECTION CONTAINER
+========================================= */
+
+.section {
+    background: #111;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 1100px;
+    border-radius: 14px;
+    border: 1px solid #d4af3720;
+}
+
+.section h2 {
+    font-size: 2rem;
+    border-left: 5px solid #d4af37;
+    padding-left: 12px;
+    margin-bottom: 20px;
 }
 
 /* =========================================
-   CARD LAYOUTS (Team, Projects, News)
-   ========================================= */
+   UNIVERSAL GRID LAYOUTS
+========================================= */
+
+.grid,
+.team-grid,
+.project-grid,
+.gallery-grid,
+.news-list,
+.contact-grid {
+    display: grid;
+    gap: 25px;
+}
+
+/* Desktop grids */
+.grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive grids */
+@media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   CARDS (Research, Projects, News, Team)
+========================================= */
 
 .card,
 .member-card,
 .project-card,
 .news-item,
-.gallery-item {
+.gallery-item,
+.contact-card {
     background: #111;
     padding: 25px;
-    border-radius: 16px;
+    border-radius: 14px;
+    border: 1px solid #333;
+    transition: 0.3s ease;
     text-align: left;
-    border: 1px solid #d4af3720;
-    box-shadow: 0 0 14px rgba(0,0,0,0.6);
-    transition: 0.3s;
 }
 
 .card:hover,
 .member-card:hover,
 .project-card:hover,
 .news-item:hover,
-.gallery-item:hover {
-    transform: translateY(-5px);
+.gallery-item:hover,
+.contact-card:hover {
+    transform: translateY(-4px);
     border-color: #d4af37;
 }
 
 /* =========================================
-   FIX PAGE WIDTH ISSUES (THE MAIN BUG)
-   ========================================= */
+   TEAM PAGE — CIRCULAR PHOTOS
+========================================= */
 
-.section,
-.team-grid,
-.project-grid,
-.news-list,
-.gallery-grid {
-    width: min(1100px, 92%);
-    margin: 40px auto;
-}
-
-/* FORCE ALL LAB PHOTOS TO BE CIRCULAR */
-.circle-photo,
-.director-photo,
-.gallery-circle {
-    width: 160px !important;
-    height: 160px !important;
+.member-photo {
+    width: 180px !important;
+    height: 180px !important;
     border-radius: 50% !important;
     object-fit: cover !important;
-    display: block !important;
-    margin: 0 auto 15px auto !important;
+    margin: 0 auto 20px auto !important;
     border: 4px solid #d4af37 !important;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.35) !important;
+    display: block !important;
+    box-shadow: 0 0 14px rgba(212,175,55,0.4);
 }
 
-/* Director photo slightly bigger */
-.director-photo {
-    width: 220px !important;
-    height: 220px !important;
+.member-card h3 {
+    color: #d4af37;
+    font-size: 1.45rem;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    font-weight: 600;
+    color: #cccccc;
+}
+
+/* Mobile team */
+@media (max-width: 600px) {
+    .member-photo {
+        width: 140px !important;
+        height: 140px !important;
+    }
+}
+
+/* =========================================
+   PUBLICATIONS
+========================================= */
+
+.pub-list {
+    padding-left: 20px;
+    line-height: 1.65;
+}
+
+.pub-list li {
+    margin-bottom: 18px;
+    border-left: 3px solid #d4af3720;
+    padding-left: 12px;
+}
+
+.pub-list strong {
+    color: #ffd86b;
+}
+
+.pub-list em {
+    color: #ccc;
+}
+
+/* =========================================
+   NEWS PAGE
+========================================= */
+
+.news-item h3 {
+    color: #d4af37;
+}
+
+.news-date {
+    color: #bdbdbd;
+    font-style: italic;
+}
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-card h3 {
+    color: #d4af37;
+}
+
+@media (max-width: 600px) {
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    margin-top: 40px;
+    padding: 25px;
+    text-align: center;
+    color: #d4af37;
+    background: #000;
+    border-top: 1px solid #333;
 }
