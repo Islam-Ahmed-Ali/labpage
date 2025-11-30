@@ -214,7 +214,8 @@ html, body {
 
 .card h3,
 .project-card h3,
-.news-item h3 {
+.news-item h3,
+.contact-card {
     margin-bottom: 10px;
 }
 
