@@ -1,1 +1,1 @@
-The lab website created by Islam A. Sayed
+The lab website is created by Islam A. Sayed
