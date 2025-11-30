@@ -212,10 +212,7 @@ html, body {
     border: 1px solid #2b2100;
 }
 
-.card h3,
-.project-card h3,
-.news-item h3,
-.contact-card h3 {
+.card, .project-card, .news-item, .contact-card, .member-card  {
     margin-bottom: 10px;
 }
 
